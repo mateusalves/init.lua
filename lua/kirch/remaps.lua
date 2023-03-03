@@ -66,7 +66,7 @@ vim.keymap.set("n", "<leader>=", ":vertical resize +5<cr>")
 vim.keymap.set("n", "<leader>-", ":vertical resize -5<cr>")
 vim.keymap.set("n", "<leader>rp", ":resize 100<cr>")
 
-vim.keymap.set("n", "<leader>gs", ":vertical G<cr>")
+vim.keymap.set("n", "<leader>gs", ":split G<cr>")
 vim.keymap.set("n", "<leader>gds", ":vertical Gdiffsplit<cr>")
 
 vim.keymap.set("i", "<c-h>", "<Left>")
