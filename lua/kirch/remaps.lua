@@ -42,11 +42,6 @@ vim.keymap.set("x", "<leader>ls", "y:.s/<C-r>\"//g<Left><Left>")
 vim.keymap.set("n", "<leader>n", ":/\\<<C-r><C-w>\\><CR>")
 vim.keymap.set("v", "<leader>n", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>")
 
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ${HOME}/.config/nvim/lua/kirch/plugins.lua<CR>");
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ${HOME}/bin/tmux-sessionizer<CR>")
-
 vim.keymap.set("n", "<leader><leader>", ":so<cr>")
 
 vim.keymap.set("n", "<leader>;", "A;<Esc>")
@@ -84,4 +79,11 @@ vim.keymap.set("n", ";sh", ":split<cr>")
 vim.keymap.set("n", ";sj", ":vsplit<cr>")
 
 vim.keymap.set("n", ";st", "bistd::<c-c>e", { silent = true}) -- I keep forgetting sometimes
+
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ${HOME}/.config/nvim/lua/kirch/plugins.lua<CR>");
+vim.keymap.set("n", "<leader>vtt", "<cmd>e ${HOME}/.tmux.conf<CR>");
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ${HOME}/bin/tmux-sessionizer<CR>")
 vim.keymap.set("n", ";d", "<cmd>silent !tmux splitw -h gdb a.out --tui enable<CR>") -- Need to compile first
