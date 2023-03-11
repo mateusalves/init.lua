@@ -58,5 +58,6 @@ return require('packer').startup(function(use)
     }
     -- not sure if I'll continue use these ones
 	use 'preservim/nerdtree'
+    use 'preservim/nerdcommenter'
     use 'airblade/vim-gitgutter'
 end)
