@@ -1,7 +1,7 @@
 -- -std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
-    command = "nnoremap <leader><F4> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr><cr>"
+    command = "nnoremap <leader><F4> :w <bar> :FloatermNew --title=CPP g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr><cr>"
     ---o %:t:r -> for name it after the file
 })
 
@@ -12,18 +12,28 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
+    command = "nnoremap <leader><F6> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall % <cr>"
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
     command = "nnoremap <leader><F7> :! g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG<CR><CR>"
 })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "c",
-    command = "nnoremap <leader><F4> :w <bar> :FloatermNew! --title=C gcc -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr><cr>"
+    command = "nnoremap <leader><F4> :w <bar> :FloatermNew --title=C gcc -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr>"
     ---o %:t:r -> for name it after the file
 })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "c",
     command = "nnoremap <leader><F5> :w <bar> :FloatermNew! --title=C gcc -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG <cr><cr>"
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "c",
+    command = "nnoremap <leader><F6> :w <bar> :FloatermNew! --title=C gcc -g -Wall % <cr>"
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -51,3 +61,6 @@ vim.keymap.set("v", "<leader>/", ':lua require("kirch.tms").toggle_comment(true)
 -- show header file
 vim.keymap.set("n", '<leader>h', fn.open_header)
 
+-- find with ripgrep
+vim.keymap.set("n", '<leader>fr', fn.rg_find)
+vim.keymap.set("n", '<leader>cp', fn.cpp_check)
