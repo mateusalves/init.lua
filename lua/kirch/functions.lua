@@ -1,18 +1,18 @@
 -- -std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
-    command = "nnoremap <leader><F4> :w <bar> :FloatermNew --title=CPP g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr><cr>"
+    command = "nnoremap <leader><F4> :w <bar> :FloatermNew --autoclose=0 --title=CPP g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out<cr>"
     ---o %:t:r -> for name it after the file
 })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
-    command = "nnoremap <leader><F5> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG <cr><cr>"
+    command = "nnoremap <leader><F5> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall -Weffc++ % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG <cr><cr>"
 })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
-    command = "nnoremap <leader><F6> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall % <cr>"
+    command = "nnoremap <leader><F6> :w <bar> :FloatermNew! --title=CPP g++ -std=c++2a -g -Wall -Weffc++ % <cr>"
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "c",
-    command = "nnoremap <leader><F4> :w <bar> :FloatermNew --title=C gcc -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr>"
+    command = "nnoremap <leader><F4> :w <bar> :FloatermNew  --autoclose=0 --title=C gcc -g -Wall % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./a.out <cr>"
     ---o %:t:r -> for name it after the file
 })
 
@@ -54,8 +54,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local fn = require("kirch.tms")
 
-vim.keymap.set("n", "<leader>/", fn.toggle_comment)
-vim.keymap.set("v", "<leader>/", ':lua require("kirch.tms").toggle_comment(true)<CR>')
+vim.keymap.set("n", ",c", fn.toggle_comment)
+vim.keymap.set("v", ",c", ':lua require("kirch.tms").toggle_comment(true)<CR>')
 --vim.keymap.set("v", "<leader>/", function() fn.toggle_comment(true) end)
 
 -- show header file

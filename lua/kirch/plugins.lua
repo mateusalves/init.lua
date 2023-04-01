@@ -62,5 +62,4 @@ return require('packer').startup(function(use)
 	use 'preservim/nerdtree'
     use 'preservim/nerdcommenter'
     use 'airblade/vim-gitgutter'
-    use 'cdelledonne/vim-cmake'
 end)
