@@ -38,7 +38,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-vim.keymap.set("x", "<leader>ls", "y:.s/<C-r>\"//g<Left><Left>")
+vim.keymap.set("x", "<leader>ls", "y:.s/<C-r>\"//gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>n", ":/\\<<C-r><C-w>\\><CR>")
 vim.keymap.set("v", "<leader>n", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>")
 

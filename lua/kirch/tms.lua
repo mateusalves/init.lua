@@ -77,16 +77,16 @@ M.toggle_comment = function(is_multi_line)
     vim.api.nvim_buf_set_lines(0, start_line, end_line, false, new_buffer_line)
 end
 
-M.open_header = function()
+M.open_related = function()
     local current_buffer = vim.api.nvim_get_current_buf()
     local buffer_name    = vim.api.nvim_buf_get_name(current_buffer)
-    local header_file    = buffer_name:gsub('%.[^.]*$', '.h')
+    local related_file    = buffer_name:gsub('%.[^.]*$', '')
 
-    header_file = header_file:gsub('.*/', '')
+    related_file = related_file:gsub('.*/', '')
     local opts = {
-        prompt_title = 'Header File (' .. header_file .. ')',
+        prompt_title = 'Related Files (' .. related_file .. ')',
         prompt_prefix = ' >',
-        search_file = header_file,
+        search_file = related_file,
     }
     telescope.find_files(opts)
 end
