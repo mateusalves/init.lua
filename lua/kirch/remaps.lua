@@ -42,7 +42,7 @@ vim.keymap.set("x", "<leader>ls", "y:.s/<C-r>\"//gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>n", ":/\\<<C-r><C-w>\\><CR>")
 vim.keymap.set("v", "<leader>n", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>")
 
-vim.keymap.set("n", "<leader><leader>", ":so<cr>")
+vim.keymap.set("n", "<leader>so", ":so<cr>")
 
 vim.keymap.set("n", "<leader>;", "A;<Esc>")
 vim.keymap.set("n", "<leader>ev", ":e $MYVIMRC<cr>")
