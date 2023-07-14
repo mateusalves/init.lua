@@ -22,6 +22,19 @@ require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
 
+    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+    -- Only load if `make` is available. Make sure you have the system
+    -- requirements installed.
+    use({
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+            return vim.fn.executable 'make' == 1
+        end,
+    })
+
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -80,44 +93,44 @@ require('packer').startup(function(use)
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-sleuth'
 
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
-    use{
-    'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-   }
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
+    use 'nvim-telescope/telescope-dap.nvim'
 
-    -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
-    local has_plugins, plugins = pcall(require, 'custom.plugins')
-    if has_plugins then
-        plugins(use)
-    end
+    --use({
+        --"iamcco/markdown-preview.nvim",
+        --run = function() vim.fn["mkdp#util#install"]() end,
+        --})
+
+
+
+        -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
+        local has_plugins, plugins = pcall(require, 'custom.plugins')
+        if has_plugins then
+            plugins(use)
+        end
+        if is_bootstrap then
+            require('packer').sync()
+        end
+    end)
+
+    -- When we are bootsttrapping a configuration, it doesnt't make sense to execute
+    -- the rest of the init.lua
+    -- You'll need to restart nvim, and then it will work.
     if is_bootstrap then
-        require('packer').sync()
+        print '====================================='
+        print '     Plugins are being installed     '
+        print '     Wait until Packer completes,    '
+        print '         then restart nvim           '
+        print '====================================='
     end
-end)
 
--- When we are bootsttrapping a configuration, it doesnt't make sense to execute
--- the rest of the init.lua
--- You'll need to restart nvim, and then it will work.
-if is_bootstrap then
-    print '====================================='
-    print '     Plugins are being installed     '
-    print '     Wait until Packer completes,    '
-    print '         then restart nvim           '
-    print '====================================='
-end
+    -- Automatically source and re-compile packer whenever you save this init.lua
+    local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+    vim.api.nvim_create_autocmd('BufWritePost', {
+        command = 'source <afile> | PackerCompile',
+        group = packer_group,
+        pattern = vim.fn.expand '$MYVIMRC',
+    })
 
--- Automatically source and re-compile packer whenever you save this init.lua
---local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true})
---vim.api.nvim_create_autocmd('BufWritePost', {
-    --commmand = 'source <afile> | PackerCompile',
-    --group = packer_group,
-    --pattern = vim.fn.expand '$MYVIMRC',
---})
