@@ -54,13 +54,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local fn = require("kirch.tms")
 
-vim.keymap.set("n", ",c", fn.toggle_comment)
-vim.keymap.set("v", ",c", ':lua require("kirch.tms").toggle_comment(true)<CR>')
---vim.keymap.set("v", "<leader>/", function() fn.toggle_comment(true) end)
+vim.keymap.set("n", ",c", fn.toggle_comment, { desc = 'toggle [c]omment tms' })
+vim.keymap.set("v", ",c", ':lua require("kirch.tms").toggle_comment(true)<CR>', { desc = 'toggle [c]omment tms' })
 
 -- show header file
-vim.keymap.set("n", '<leader>r', fn.open_related)
+vim.keymap.set("n", '<leader>r', fn.open_related, { desc = 'open [r]elated files tms' })
 
 -- find with ripgrep
-vim.keymap.set("n", '<leader>fr', fn.rg_find)
-vim.keymap.set("n", '<leader>cp', fn.cpp_check)
+vim.keymap.set("n", '<leader>fr', fn.rg_find, { desc = '[f]ind grep tms' })
+vim.keymap.set("n", '<leader>cp', fn.cpp_check, { desc = 'run [cp]p check tms' })
