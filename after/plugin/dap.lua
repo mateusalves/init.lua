@@ -7,6 +7,7 @@ vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'dap
 vim.keymap.set('n', '<leader>B', ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", { desc = 'dap conditional breakpoint'})
 vim.keymap.set('n', '<leader>lp', ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", { desc = 'dap log point message'})
 vim.keymap.set('n', '<leader>dc', require('dap').close, { desc = 'close dap'})
+vim.keymap.set('n', '<leader>dbc', require('dap').clear_breakpoints, { desc = '[d]ap [b]reakpoint [c]lear'})
 vim.keymap.set('n', '<leader>dr', ":lua require('dapui').open({reset=true})<cr>", { desc = 'reset dap ui'})
 vim.keymap.set('n', '<leader>dk', ":lua require('dapui').close()<cr>", { desc = 'close dap ui'})
 
