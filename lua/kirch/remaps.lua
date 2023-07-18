@@ -16,7 +16,7 @@ vim.keymap.set("n", "n", "nzzzv", { desc = 'Search down but keep in center' })
 vim.keymap.set("n", "N", "Nzzzv", { desc = 'Search up but keep in center' })
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", "\"_dP", { desc = 'Paste over a text withou overwriting the register' })
+vim.keymap.set("x", "<leader>p", "\"_dP", { desc = 'Paste over a text without overwriting the register' })
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = 'Copy it to register' })
