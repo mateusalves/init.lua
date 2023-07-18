@@ -10,10 +10,31 @@ vim.keymap.set('n', '<leader>dc', require('dap').close, { desc = 'close dap'})
 vim.keymap.set('n', '<leader>dbc', require('dap').clear_breakpoints, { desc = '[d]ap [b]reakpoint [c]lear'})
 vim.keymap.set('n', '<leader>dr', ":lua require('dapui').open({reset=true})<cr>", { desc = 'reset dap ui'})
 vim.keymap.set('n', '<leader>dk', ":lua require('dapui').close()<cr>", { desc = 'close dap ui'})
+vim.keymap.set('n', '<Leader>drp', function() require('dap').repl.open() end)
+
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+  require('dap.ui.widgets').hover()
+end, { desc = 'Dap hover'})
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+  require('dap.ui.widgets').preview()
+end, { desc = 'Dap preview'})
+vim.keymap.set('n', '<Leader>df', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.frames)
+end, { desc = 'Dap frames on centered float'})
+vim.keymap.set('n', '<Leader>ds', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.scopes)
+end, { desc = 'Dap stack call on centered float'})
 
 require('telescope').load_extension('dap')
 
 local dap, dapui = require("dap"), require("dapui")
+
+--dap.defaults.fallback.external_terminal = {
+  --command = '/usr/bin/alacritty';
+  --args = {'-e'};
+--}
 
 --dap.adapters.lldb = {
   --type = "executable",
