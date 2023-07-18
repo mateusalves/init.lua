@@ -55,9 +55,6 @@ vim.keymap.set("n", "<leader>-", ":vertical resize -5<cr>", { desc = 'Decrease w
 vim.keymap.set("n", "Zi", "<c-w>_<c-w>|\\|<c-w>\\|", { desc = '[Z]oom [i]n' })
 vim.keymap.set("n", "Zo", "<c-w>=", { desc = '[Z]oom [o]ut' })
 
-vim.keymap.set("n", "<leader>gs", ":vsplit G<cr>", { desc = '[g]it [s]tatus' })
-vim.keymap.set("n", "<leader>gds", ":vertical Gdiffsplit<cr>", { desc = '[g]it [d]iffer [s]tatus' })
-
 vim.keymap.set("i", "<c-h>", "<Left>" , { desc = 'Left on insert mode' })
 vim.keymap.set("i", "<c-j>", "<Down>" , { desc = 'Down on insert mode' })
 vim.keymap.set("i", "<c-k>", "<Up>"   , { desc = 'Up on insert mode' })

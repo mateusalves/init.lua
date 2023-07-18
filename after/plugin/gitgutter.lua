@@ -13,5 +13,5 @@ vim.keymap.set("n", "gnh", ":GitGutterNextHunk<cr>", {desc = '[G]o to [N]ext [H]
 vim.keymap.set("n", "gph", ":GitGutterPrevHunk<cr>", {desc = '[G]o to [P]revious [H]unk'})
 vim.keymap.set("n", "gsh", ":GitGutterStageHunk<cr>", {desc = '[G]it [S]tage [H]unk'})
 vim.keymap.set("n", "guh", ":GitGutterUndoHunk<cr>",  {desc = '[G]it [U]ndo [H]unk'})
-vim.keymap.set("n", "gp", ":GitGutterPreviewHunk<cr>", {desc = '[G]it [P]review'})
+vim.keymap.set("n", "ghp", ":GitGutterPreviewHunk<cr>", {desc = '[G]it [H]unk [P]review'})
 vim.keymap.set("n", "<leader>tgh", ":GitGutterLineHighlightsToggle<cr>", {desc = '[T]oggle [G]it [H]ighlight'})
