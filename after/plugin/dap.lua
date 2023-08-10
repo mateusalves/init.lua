@@ -46,7 +46,7 @@ dap.adapters.cppdbg = {
   type = 'executable',
   id = 'cppdbg',
   --command = '/mnt/d/versioning/dotfiles/extension/debugAdapters/bin/OpenDebugAD7',
-  command = '/usr/bin/lldb-vscode-10',
+  command = '/usr/bin/lldb-vscode',
 }
 
 dap.configurations.cpp = {
