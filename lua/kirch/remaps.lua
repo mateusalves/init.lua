@@ -33,6 +33,7 @@ vim.keymap.set("n", "q<C-j>", "<cmd>cprev<CR>zz", { desc = '[q]uick fix list pre
 vim.keymap.set("n", "q<C-k>", "<cmd>cnext<CR>zz", { desc = '[q]uick fix list next' })
 
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = '[s]ubstitute this word globally' })
+vim.keymap.set("v", "<leader>s", ":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = '[s]ubstitute this word in a visual selection' })
 vim.keymap.set("n", "<leader>n", ":/\\<<C-r><C-w>\\><CR>", { desc = 'Search this word' })
 vim.keymap.set("v", "<leader>n", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>", { desc = 'Search this selection' })
 
