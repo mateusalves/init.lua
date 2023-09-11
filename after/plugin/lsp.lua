@@ -60,7 +60,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, {buffer = bufnr, remap = false, desc = '[v]im [c]ode [a]ctions' })
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, {buffer = bufnr, remap = false, desc = '[v]im [r]efe[r]ences' })
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {buffer = bufnr, remap = false, desc = '[v]im [r]e[n]ame' })
-    vim.keymap.set("i", "<leader>hs", function() vim.lsp.buf.signature_help() end, {buffer = bufnr, remap = false, desc = '[v]im [s]ignature [h]elp' })
+    vim.keymap.set("n", "<leader>sh", function() vim.lsp.buf.signature_help() end, {buffer = bufnr, remap = false, desc = '[v]im [s]ignature [h]elp' })
 end)
 
 lsp.setup()
