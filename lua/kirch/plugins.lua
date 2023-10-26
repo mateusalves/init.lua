@@ -86,6 +86,7 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use 'xiyaowong/transparent.nvim'
     -- not sure if I'll continue use these ones
     use 'preservim/nerdtree'
     use 'preservim/nerdcommenter'
