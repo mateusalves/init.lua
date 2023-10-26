@@ -69,7 +69,7 @@ require('packer').startup(function(use)
 
             -- Useful status updates for LSP
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+            --{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' }, -- Required
@@ -88,9 +88,10 @@ require('packer').startup(function(use)
     }
     use 'xiyaowong/transparent.nvim'
     -- not sure if I'll continue use these ones
-    use 'preservim/nerdtree'
+    use 'nvim-tree/nvim-tree.lua'
+    use 'nvim-tree/nvim-web-devicons'
     use 'preservim/nerdcommenter'
-    use 'airblade/vim-gitgutter'
+    use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-sleuth'
 
