@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>bft", ":FloatermNew! --title=workdir cd %:p:h<cr>",
 vim.keymap.set("n", "<leader>dft", ":FloatermNew! --title=dotfiles cd ${HOME}/versioning/dotfiles<cr>", { desc = 'Toggle Float Terminal in dotfiles repo location' })
 
 --Cmake related
-vim.keymap.set("n", "<leader>cg", ":FloatermNew --title=CMakeGenerate --autoclose=0 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1<cr><cr>", { desc = 'Cmake generate' })
+vim.keymap.set("n", "<leader>cg", ":FloatermNew --title=CMakeGenerate --autoclose=0 cd %:p:h && cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1<cr><cr>", { desc = 'Cmake generate' })
 vim.keymap.set("t", "<leader>cg", "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1<cr>", { desc = 'Cmake generate' })
 vim.keymap.set("n", "<leader>cb", ":FloatermNew --title=CMakeBuild --autoclose=0 cd %:p:h/build && cmake --build .<cr><cr>", { desc = 'Cmake build' })
 vim.keymap.set("t", "<leader>cb", "cmake --build .<cr>", { desc = 'Cmake build' })
