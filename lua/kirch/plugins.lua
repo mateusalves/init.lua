@@ -95,7 +95,10 @@ require('packer').startup(function(use)
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-sleuth'
 
-    use 'ellisonleao/glow.nvim'
+    use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+    })
     -- debugging
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
