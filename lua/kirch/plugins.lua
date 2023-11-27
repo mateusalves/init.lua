@@ -95,6 +95,7 @@ require('packer').startup(function(use)
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-sleuth'
 
+    use 'ellisonleao/glow.nvim'
     -- debugging
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
