@@ -29,8 +29,8 @@ vim.keymap.set("n", "Q", "<nop>", { desc = 'NOP' })
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'Format with LSP' })
 
-vim.keymap.set("n", "q<C-j>", "<cmd>cprev<CR>zz", { desc = '[q]uick fix list previous' })
-vim.keymap.set("n", "q<C-k>", "<cmd>cnext<CR>zz", { desc = '[q]uick fix list next' })
+vim.keymap.set("n", "q<C-k>", "<cmd>cprev<CR>zz", { desc = '[q]uick fix list previous' })
+vim.keymap.set("n", "q<C-j>", "<cmd>cnext<CR>zz", { desc = '[q]uick fix list next' })
 
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = '[s]ubstitute this word globally' })
 vim.keymap.set("v", "<leader>s", ":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = '[s]ubstitute this word in a visual selection' })
