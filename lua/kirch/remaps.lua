@@ -69,7 +69,7 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true }, { desc = 'right
 vim.keymap.set("n", ";sh", ":split<cr>" , { desc = '[s]plit [h]orizontally' })
 vim.keymap.set("n", ";sj", ":vsplit<cr>", { desc = '[s]plit vertically' })
 
-vim.keymap.set("n", ";st", "bistd::<c-c>e", { silent = true}, { desc = 'add std:: before a word' }) -- I keep forgetting sometimes
+vim.keymap.set("n", ";st", "lbistd::<c-c>e", { silent = true}, { desc = 'add std:: before a word' }) -- I keep forgetting sometimes
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = 'Make the current script executable' })
 
