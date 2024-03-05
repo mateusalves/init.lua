@@ -96,6 +96,27 @@ require('packer').startup(function(use)
     use 'tpope/vim-sleuth'
 
     use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",  -- recommended, use latest release instead of latest commit
+        requires = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+            -- see below for full list of optional dependencies 👇
+        },
+        config = function()
+            require("obsidian").setup({
+                workspaces = {
+                    {
+                        name = "SecondBrain",
+                        path = "~/versioning/notes/SecondBrain/",
+                    },
+                },
+            })
+        end,
+    })
+
+    use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
     })
