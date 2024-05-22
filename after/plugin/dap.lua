@@ -49,10 +49,18 @@ dap.adapters.cppdbg = {
   command = '/usr/bin/lldb-vscode',
 }
 
+dap.adapters.gdb = {
+  type = 'executable',
+  command = 'gdb',
+  --command = '/mnt/d/versioning/dotfiles/extension/debugAdapters/bin/OpenDebugAD7',
+  args = {"-i", "dap"}
+}
+
 dap.configurations.cpp = {
   {
     name = "Launch file",
-    type = "cppdbg",
+    --type = "cppdbg",
+    type = "gdb",
     request = "launch",
     setupCommands = {
       {
