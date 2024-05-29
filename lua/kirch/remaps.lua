@@ -41,13 +41,14 @@ vim.keymap.set("n", "<leader>so", ":so<cr>", { desc = '[s][o]urce this file' })
 
 vim.keymap.set("n", "<leader>;", "A;<Esc>", { desc = 'Append [;] to the end of this line' })
 
-vim.keymap.set("n", "<c-s>", ":update<cr>", { desc = 'Save file if modified' })
-vim.keymap.set("i", "<c-s>", "<esc>:update<cr>", { desc = 'Save file if modified' })
+vim.keymap.set("n", "<c-s>", ":w<cr>", { desc = 'Save file' })
+vim.keymap.set("i", "<c-s>", "<esc>:w<cr>", { desc = 'Save file' })
 vim.keymap.set("n", "<leader>q", ":q!<cr>", { desc = 'Forced [q]uit without saving' })
 
 vim.keymap.set("n", "<leader>.", ":bn<cr>", { desc = 'next buffer' })
 vim.keymap.set("n", "<leader>,", ":bp<cr>", { desc = 'previous buffer' })
 vim.keymap.set("n", "<leader>m", ":bd<cr>", { desc = 'close buffer' })
+vim.keymap.set("n", "<leader>Q", ":w <bar> %bd <bar> e# <bar> bd# <cr><cr>!", { desc = 'close others buffers' })
 
 vim.keymap.set("n", "<leader>+", ":resize +5<cr>", { desc = 'Increase window height' })
 vim.keymap.set("n", "<leader>_", ":resize -5<cr>", { desc = 'Decrease window height' })
