@@ -124,6 +124,7 @@ require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
     use 'nvim-telescope/telescope-dap.nvim'
+    use 'nvim-neotest/nvim-nio'
 
     --use({
         --"iamcco/markdown-preview.nvim",
