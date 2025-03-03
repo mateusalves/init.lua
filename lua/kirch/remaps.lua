@@ -78,4 +78,4 @@ vim.keymap.set("n", "<leader>ev", ":e $MYVIMRC<cr>", { desc = 'Op[e]n MY[v]IMRC'
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ${HOME}/.config/nvim/lua/kirch/plugins.lua<CR>", { desc = '[v]iew [p]lugins [p]lease? haha' })
 vim.keymap.set("n", "<leader>vtt", "<cmd>e ${HOME}/.tmux.conf<CR>", { desc = '[v]iew [t]mux [t]hing haha' })
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ${HOME}/bin/tmux-sessionizer<CR>", { desc = 'Tmux sessionizer dir' })
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ${HOME}/.tmux-sessionizer<CR>", { desc = 'Tmux sessionizer dir' })
