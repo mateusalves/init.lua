@@ -32,7 +32,10 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+    mapping = cmp_mappings,
+    enabled = function()
+        return not vim.g.interview_mode
+    end
 })
 
 lsp.set_preferences({
